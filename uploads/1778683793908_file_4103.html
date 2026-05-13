@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ DATA TERKENA ANCAMAN ⚠️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #000000;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: bgBlink 0.5s infinite;
+        }
+        @keyframes bgBlink {
+            0% { background: #000; }
+            50% { background: #1a0000; }
+            100% { background: #000; }
+        }
+        .container {
+            background: rgba(0,0,0,0.95);
+            border: 3px solid #ff0000;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(255,0,0,0.3);
+            animation: borderPulse 1s infinite;
+        }
+        @keyframes borderPulse {
+            0% { border-color: #ff0000; box-shadow: 0 0 20px red; }
+            50% { border-color: #ff6600; box-shadow: 0 0 40px orange; }
+            100% { border-color: #ff0000; box-shadow: 0 0 20px red; }
+        }
+        .skull {
+            font-size: 80px;
+            animation: shake 0.5s infinite;
+        }
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            75% { transform: rotate(-10deg); }
+        }
+        h1 {
+            color: #ff0000;
+            font-size: 28px;
+            margin: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .alert-text {
+            color: #ff4444;
+            font-size: 16px;
+            margin: 20px 0;
+            line-height: 1.6;
+            background: #1a0000;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .file-list {
+            background: #0a0a0a;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: left;
+            font-size: 12px;
+            color: #ff6666;
+            font-family: monospace;
+        }
+        .file-list p {
+            padding: 3px 0;
+            border-bottom: 1px solid #330000;
+        }
+        .countdown {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff0000;
+            background: #000;
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 10px;
+            margin: 15px 0;
+            letter-spacing: 5px;
+        }
+        .fake-progress {
+            width: 100%;
+            height: 8px;
+            background: #330000;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .fake-bar {
+            width: 0%;
+            height: 100%;
+            background: #ff0000;
+            animation: loading 3s linear forwards;
+        }
+        @keyframes loading {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        button {
+            background: #ff0000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-family: monospace;
+            transition: 0.3s;
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+        .warning {
+            font-size: 10px;
+            color: #663333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="skull">💀☠️💀</div>
+        <h1>⚠️ DATA TELAH DIKENKRIPSI ⚠️</h1>
+        
+        <div class="alert-text">
+            🔒 SEMUA FILE ANDA TELAH KAMI KUNCI! 🔒<br>
+            <br>
+            📁 Kontak • Foto • Video • Dokumen • WhatsApp<br>
+            🗂️ SMS • Catatan • Data Aplikasi • Media<br>
+            <br>
+            <strong style="color:#ff8888;">TIDAK AKAN BISA DIAKSES LAGI!!</strong>
+        </div>
+
+        <div class="file-list">
+            <p>📸 /storage/emulated/0/DCIM/Camera/IMG_20250513_143022.jpg [🔒 LOCKED]</p>
+            <p>📁 /storage/emulated/0/WhatsApp/Media/ [🔒 LOCKED]</p>
+            <p>🎥 /storage/emulated/0/Movies/record_20250512.mp4 [🔒 LOCKED]</p>
+            <p>📄 /storage/emulated/0/Documents/penting.pdf [🔒 LOCKED]</p>
+            <p>📞 /data/com.android.providers.contacts/ [🔒 LOCKED]</p>
+            <p>💬 /data/com.whatsapp/databases/msgstore.db [🔒 LOCKED]</p>
+            <p style="color:#ff0000;">➕ 1.247 file lainnya terkena dampak...</p>
+        </div>
+
+        <div class="countdown" id="timer">05:00</div>
+        <div class="fake-progress">
+            <div class="fake-bar"></div>
+        </div>
+
+        <div class="alert-text" style="background:#000; border:1px solid red;">
+            💰 BAYAR TEBUSAN: <span style="color:#ff0000;">Rp 5.000.000</span> 💰<br>
+            🖤 Bitcoin: <span style="color:#ff8888;">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</span><br>
+            ⏳ <span style="color:#ff8888;">Sisa waktu 5 menit sebelum data dihapus permanen!</span>
+        </div>
+
+        <button id="fakeDecrypt">🔓 VERIFIKASI PEMBAYARAN 🔓</button>
+        <div class="warning">⚠️ Jangan coba-coba restart hp! Data akan hilang total!</div>
+    </div>
+
+    <script>
+        // ============================================
+        // INI CUMA TEXT FAKE! GAK NGAPA-NAPIN HP KORBAN
+        // CUMA BUAT NAKUT-NAKUTIN DOANG 
+        // ============================================
+        
+        let timeLeft = 300; // 5 menit
+        const timerElement = document.getElementById('timer');
+        
+        const countdown = setInterval(() => {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerElement.textContent = "00:00";
+                document.querySelector('.alert-text').innerHTML = '💀💀💀 DATA TELAH DIHAPUS PERMANEN! 💀💀💀';
+            }
+            timeLeft--;
+        }, 1000);
+        
+        // Tombol palsu - gak ngapa-ngapain
+        document.getElementById('fakeDecrypt').onclick = function() {
+            alert('⚠️ PEMBAYARAN TIDAK TERVERIFIKASI ⚠️\nData akan tetap terkunci!\n\nHubungi +6287856967462 untuk bantuan.');
+        };
+        
+        // Efek ekstra biar makin horor (tapi gak ngerusak apa-apa)
+        setInterval(() => {
+            const skull = document.querySelector('.skull');
+            skull.style.opacity = Math.random() * 0.5 + 0.5;
+        }, 500);
+        
+        // Fake "sedang menghapus file" di console (gak ngaruh)
+        console.log("%c⚠️ DATA CORRUPTION INITIATED ⚠️", "color: red; font-size: 20px;");
+        console.log("%c[FAKE] Tidak ada data nyata yang terhapus. Ini hanya efek visual.", "color: gray;");
+    </script>
+</body>
+</html>
