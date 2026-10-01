@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Degedna Shoes Mali</title>
+  <meta name="description" content="Degedna Shoes Mali — chaussures modernes, confortables et élégantes pour hommes et femmes.">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,Helvetica,sans-serif;background:#f7f7f5;color:#171717;line-height:1.6}
+    header{background:#111;color:#fff;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+    .logo{font-size:22px;font-weight:800;letter-spacing:1px}
+    nav a{color:#fff;text-decoration:none;margin-left:20px;font-size:14px}
+    .hero{padding:85px 7%;background:linear-gradient(135deg,#111,#333);color:#fff;text-align:center}
+    .hero h1{font-size:clamp(42px,8vw,76px);margin-bottom:10px}
+    .hero p{font-size:20px;color:#ddd}
+    .btn{display:inline-block;margin-top:28px;background:#fff;color:#111;padding:13px 25px;border-radius:30px;text-decoration:none;font-weight:700}
+    section{padding:65px 7%;max-width:1200px;margin:auto}
+    .title{text-align:center;margin-bottom:35px}
+    .title h2{font-size:32px}
+    .title p{color:#666}
+    .about{text-align:center;max-width:800px}
+    .about p{color:#555;font-size:17px}
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+    .card{background:#fff;border-radius:18px;padding:18px;box-shadow:0 5px 20px #00000012}
+    .shoe{height:190px;border-radius:14px;background:#e9e9e7;display:flex;align-items:center;justify-content:center;font-size:65px}
+    .card h3{margin-top:16px;font-size:20px}
+    .price{font-weight:800;margin-top:5px}
+    .card p{color:#666;font-size:14px}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+    .feature{background:#fff;padding:24px;border-radius:16px;text-align:center}
+    .feature b{display:block;margin-bottom:6px}
+    .order{background:#111;color:#fff;border-radius:22px;text-align:center;padding:50px 25px}
+    .order p{color:#ccc}
+    footer{text-align:center;background:#111;color:#aaa;padding:28px 7%;font-size:14px}
+    @media(max-width:650px){header{padding:15px 5%}nav a{margin-left:9px;font-size:12px}.hero{padding:65px 5%}section{padding:50px 5%}}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">DEGEDNA SHOES</div>
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#collection">Collection</a>
+    <a href="#apropos">À propos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="accueil">
+    <h1>DEGEDNA SHOES</h1>
+    <p>Votre style, votre choix.</p>
+    <a class="btn" href="#collection">Voir la collection</a>
+  </section>
+
+  <section id="apropos" class="about">
+    <div class="title">
+      <h2>Bienvenue chez Degedna Shoes 🇲🇱</h2>
+    </div>
+    <p>
+      Découvrez notre sélection de chaussures pour hommes et femmes.
+      Des modèles modernes, confortables et adaptés à votre style quotidien.
+      Nous vous aidons à trouver le modèle qui correspond à vos goûts et à votre budget.
+    </p>
+  </section>
+
+  <section id="collection">
+    <div class="title">
+      <h2>Notre collection</h2>
+      <p>Découvrez nos différents styles.</p>
+    </div>
+    <div class="products">
+      <article class="card">
+        <div class="shoe">👟</div>
+        <h3>Sneakers Tendance</h3>
+        <p>Design moderne et confort quotidien.</p>
+        <div class="price">Prix sur demande</div>
+      </article>
+      <article class="card">
+        <div class="shoe">🥾</div>
+        <h3>Chaussures Classiques</h3>
+        <p>Un style élégant pour toutes les occasions.</p>
+        <div class="price">Prix sur demande</div>
+      </article>
+      <article class="card">
+        <div class="shoe">👞</div>
+        <h3>Chaussures Homme</h3>
+        <p>Confort et style pour votre quotidien.</p>
+        <div class="price">Prix sur demande</div>
+      </article>
+      <article class="card">
+        <div class="shoe">👠</div>
+        <h3>Chaussures Femme</h3>
+        <p>Des modèles élégants pour compléter votre look.</p>
+        <div class="price">Prix sur demande</div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="title">
+      <h2>Pourquoi choisir Degedna Shoes ?</h2>
+    </div>
+    <div class="features">
+      <div class="feature">👟<b>Modèles variés</b><span>Des styles pour différents goûts.</span></div>
+      <div class="feature">✨<b>Style moderne</b><span>Des modèles adaptés aux tendances.</span></div>
+      <div class="feature">💰<b>Prix accessibles</b><span>Des options adaptées à votre budget.</span></div>
+      <div class="feature">💬<b>Service client</b><span>Nous sommes à votre écoute.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="order">
+      <h2>Comment commander ?</h2>
+      <p>Choisissez votre modèle, contactez-nous, puis confirmez la pointure, la couleur et les détails de votre commande.</p>
+      <a class="btn" href="#contact">Nous contacter</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="title">
+      <h2>Contactez-nous</h2>
+      <p>Une question sur un modèle ? Contactez Degedna Shoes.</p>
+    </div>
+    <div style="text-align:center">
+      <p><strong>WhatsApp :</strong> Ajoutez votre numéro ici</p>
+      <p><strong>Localisation :</strong> Mali 🇲🇱</p>
+      <p><strong>Horaires :</strong> Selon disponibilité</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 Degedna Shoes — Votre style, votre choix.
+</footer>
+
+</body>
+</html>
