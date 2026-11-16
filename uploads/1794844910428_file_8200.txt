@@ -1,0 +1,52 @@
+PERAN: Kamu senior Flutter UI engineer. Tugas: REDESIGN TOTAL tampilan (UI/UX + tata letak) aplikasi Flutter gue jadi tema "papan tulis kelas + kertas sobek + pin". Layout lama jangan dipertahankan, harus 100% beda. Logic, state management, routing, API, dan model data JANGAN diubah. Cuma lapisan UI.
+
+TEMA
+Background layar = krem. Papan tulis hijau = area/panel layout tempat konten ditempel (bukan background seluruh layar). Konten berupa note kertas krem yang sedikit miring, bawahnya sobek zigzag, ditempel pin merah. Bingkai papan = kayu cokelat. Mode terang saja, tidak ada dark mode.
+
+PALET (pakai persis, simpan di satu file theme)
+- Krem kertas/background: #F5EBD7
+- Krem terang (input, chip): #FBF5E8
+- Krem gelap (garis/shadow): #E6D5B8
+- Merah (pin, tombol utama, aksen): #C62F22
+- Hitam tinta (teks): #1E1E1E
+- Hijau papan: #2F5D46
+- Kayu bingkai: #9A6B3F (garis tepi #5E3B1E)
+Hijau dan kayu hanya untuk panel papan. Jangan jadi warna dominan.
+
+FONT (bundle di assets, jangan fetch runtime)
+Judul: Caveat (tulisan tangan). Isi/label/tombol: Nunito.
+
+KOMPONEN WAJIB (buat reusable di folder /widgets)
+1. TornPaperCard: kertas krem, bawah zigzag pakai CustomClipper (path, tanpa gambar), rotasi statis -0.03 sampai 0.03 rad, shadow tipis.
+2. RedPin: Container bulat merah + highlight kecil, tanpa aset.
+3. ChalkBoardPanel: panel hijau, radius 12, bingkai kayu 8px, inner shadow tipis.
+4. ChalkText: teks kapur krem tipis di atas papan (Caveat).
+5. PinButton: tombol utama bentuk stiker/pin merah, teks krem tebal.
+6. PaperTextField: input kertas krem terang, border hitam 2px.
+
+LAYAR (tiap layar tata letaknya harus beda dari versi lama)
+1. SPLASH: background krem. Papan hijau kecil di tengah, tulisan kapur nama app muncul. Satu pin merah "jatuh" menancap di atas papan (TweenAnimationBuilder, maks 600 ms). Setelah itu pindah layar otomatis.
+2. LANDING/ONBOARDING: 3 halaman swipe. Tiap halaman = satu papan hijau besar dengan 1-2 note sobek menempel yang berisi judul + penjelasan singkat. Indikator halaman berupa pin kecil (aktif = merah, tidak aktif = krem gelap). Tombol "Mulai" = PinButton di bawah papan.
+3. LOGIN/REGISTER: judul Caveat hitam di atas, form dalam satu TornPaperCard besar yang "ditempel" di papan hijau (papan setengah layar bagian atas). Tombol Masuk = PinButton. Link "Daftar" ditulis kapur. Pesan error muncul sebagai note kecil merah-krem yang miring.
+4. HOME: header krem (judul Caveat + search PaperTextField + chip filter). Di bawahnya satu ChalkBoardPanel besar berisi grid note 2 kolom (staggered, tinggi bervariasi, sudut miring beda-beda). FAB = pin merah besar.
+5. DASHBOARD: papan hijau dibagi jadi beberapa "zona" yang ditempel: kartu statistik = note kecil dengan angka besar (Caveat), grafik/progress digambar di kertas (garis hitam + aksen merah), daftar aktivitas terbaru = satu kertas panjang sobek di bawah. Navigasi bawah = baris kertas krem dengan ikon hitam, item aktif ditandai pin merah kecil.
+
+ATURAN PERFORMA (ringan, ini prioritas)
+- Tanpa aset gambar untuk sobekan/pin/papan. Semua pakai CustomClipper, CustomPaint, Container.
+- Dilarang: BackdropFilter, Opacity bertumpuk, blur shadow besar (maks blurRadius 6).
+- Pakai const di mana bisa, RepaintBoundary di item list, ListView/GridView.builder.
+- Animasi hanya: pin jatuh saat note muncul (200-300 ms) dan transisi layar sederhana.
+- Package minimal. Kalau cukup tanpa package tambahan, jangan tambah.
+- Sudut miring dihitung statis (berdasarkan index), bukan random tiap rebuild.
+
+AKSESIBILITAS
+Kontras teks minimal 4.5:1, tombol/tap area minimal 44px, ikon tanpa teks wajib punya Semantics label.
+
+CARA KERJA (hemat credit, ini penting)
+- Kerjakan berurutan: theme + widget reusable dulu, lalu Splash, Landing, Login, Home, Dashboard.
+- Jangan tanya balik kecuali benar-benar buntu. Kalau ragu, pilih sendiri dan catat asumsinya.
+- Jangan loop verifikasi/screenshot berulang. Cukup pastikan project compile (flutter analyze bersih).
+- Kalau credit hampir habis, prioritaskan: theme + widget, Home, Login, lalu sisanya.
+
+OUTPUT
+Project Flutter yang jalan, struktur folder rapi (theme/, widgets/, screens/), plus ringkasan singkat: file apa saja yang berubah dan asumsi yang kamu ambil.
